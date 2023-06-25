@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @Entity
@@ -23,8 +24,12 @@ public class Books {
     @Column
     private Integer pageCount;
 
-    @JsonProperty("date")
-    @JsonFormat(pattern="yyyy-MM-dd")
+    //@JsonProperty("date")
+    //@JsonFormat(pattern="yyyy-MM-dd")
+    //@Column
+    //private Date dateRead;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     @Column
     private Date dateRead;
 
